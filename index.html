@@ -274,6 +274,102 @@
         .video-rating { font-size: 0.85rem; color: #ffa000; border-top: 1px solid var(--gris); padding-top: 0.6rem; }
         .video-rating span { color: #666; font-style: italic; }
 
+        /* EVIDENCIAS FOTOGRÁFICAS */
+        .evidencias-section {
+            background: var(--blanco);
+        }
+        
+        .evidencias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .evidencia-card {
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: all 0.3s;
+            border: 2px solid var(--gris-claro);
+        }
+        
+        .evidencia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--verde);
+        }
+        
+        .evidencia-image {
+            width: 100%;
+            height: 280px;
+            background: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .evidencia-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .evidencia-card:hover .evidencia-image img {
+            transform: scale(1.05);
+        }
+        
+        .evidencia-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--verde);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .evidencia-info {
+            padding: 1.2rem;
+        }
+        
+        .evidencia-info h3 {
+            color: var(--azul-marino);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .evidencia-info p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .evidencia-placeholder {
+            background: var(--gris-claro);
+            border: 2px dashed var(--gris);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            color: #999;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .evidencia-placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         /* INSTRUCCIONES DE USO - VIDEOS TAMAÑO REDUCIDO */
         .steps-video-container { max-width: 800px; margin: 0 auto; }
         .steps-progress { width: 100%; height: 6px; background: var(--gris); border-radius: 10px; margin-bottom: 2rem; overflow: hidden; }
@@ -499,6 +595,10 @@
             .kit-price { font-size: 1.8rem; }
             .recarga-price { font-size: 2rem; }
             
+            /* Evidencias responsivo */
+            .evidencias-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .evidencia-image { height: 220px; }
+            
             /* Instrucciones responsivo */
             .step-content.active { grid-template-columns: 1fr; gap: 1.2rem; }
             .step-video { max-height: 320px; margin: 0 auto; max-width: 280px; }
@@ -530,6 +630,7 @@
                     <li><a href="#kits">Kits</a></li>
                     <li><a href="#como-funciona">Cómo Funciona</a></li>
                     <li><a href="#casos-reales">Casos Reales</a></li>
+                    <li><a href="#evidencias">Evidencias</a></li>
                     <li><a href="#instrucciones">Instrucciones</a></li>
                     <li><a href="#pedido">Hacer Pedido</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -548,7 +649,8 @@
             <span class="badge">💰 Ahorra hasta 40%</span>
             <span class="badge">🌱 Eco-Friendly</span>
             <span class="badge">⚡ Resultados en Segundos</span>
-            <span class="badge">🎬 Casos Reales Comprobados</span>
+            <span class="badge"> Casos Reales Comprobados</span>
+            <span class="badge"> Evidencias Fotográficas</span>
         </div>
     </section>
 
@@ -565,7 +667,7 @@
                         <img src="images/kit-1-inicio.jpg" alt="Kit Inicio Mata QK - 1 atomizador + 5 bolsas de concentrado">
                     </div>
                     <div class="kit-content">
-                        <div class="kit-name"> Kit Inicio</div>
+                        <div class="kit-name">🏠 Kit Inicio</div>
                         <div class="kit-desc">Ideal para departamentos y problemas puntuales</div>
                         <ul class="kit-includes">
                             <li>1 Atomizador 1L premium</li>
@@ -588,7 +690,7 @@
                         <img src="images/kit-2-familiar.jpg" alt="Kit Familiar Mata QK - 2 atomizadores + 10 bolsas de concentrado">
                     </div>
                     <div class="kit-content">
-                        <div class="kit-name">‍👧 Kit Familiar</div>
+                        <div class="kit-name">👨👩‍👧 Kit Familiar</div>
                         <div class="kit-desc">Perfecto para casas y protección completa</div>
                         <ul class="kit-includes">
                             <li>2 Atomizadores 1L premium</li>
@@ -603,7 +705,7 @@
                             $400 MXN
                         </div>
                         <button class="btn-kit" onclick="selectKit('Kit Familiar - 2 Atomizadores + 10 Bolsas', 400)">Seleccionar Kit</button>
-                        <a href="https://mpago.li/2gtb59v" target="_blank" class="btn-mercadopago">💳 Pagar con Mercado Pago</a>
+                        <a href="https://mpago.li/2gtb59v" target="_blank" class="btn-mercadopago"> Pagar con Mercado Pago</a>
                     </div>
                 </div>
 
@@ -686,7 +788,7 @@
     <!-- CASOS REALES -->
     <section id="casos-reales" style="background: var(--gris-claro);">
         <div class="container">
-            <h2 class="section-title">🎬 Casos Reales</h2>
+            <h2 class="section-title">🎬 Casos Reales en Video</h2>
             <p class="section-subtitle">Resultados comprobados por nuestros clientes. Así funciona Mata QK en la vida real.</p>
             
             <div class="videos-grid">
@@ -715,7 +817,7 @@
                         </video>
                     </div>
                     <div class="video-info">
-                        <span class="video-tag"> Negocio</span>
+                        <span class="video-tag">🏪 Negocio</span>
                         <h3>Segundo caso real próximamente</h3>
                         <p>Descripción del segundo caso que subirás. Ej: Bodega con infestación severa eliminada con 2 atomizaciones.</p>
                         <div class="video-rating">⭐⭐⭐⭐⭐ <span>Testimonio del cliente</span></div>
@@ -731,7 +833,7 @@
                         </video>
                     </div>
                     <div class="video-info">
-                        <span class="video-tag">👨‍‍👧 Casa</span>
+                        <span class="video-tag">👨‍👩‍👧 Casa</span>
                         <h3>Tercer caso real próximamente</h3>
                         <p>Descripción del tercer caso que subirás. Ej: Casa completa libre de cucarachas en 24 horas.</p>
                         <div class="video-rating">⭐⭐⭐⭐⭐ <span>Testimonio del cliente</span></div>
@@ -749,10 +851,65 @@
         </div>
     </section>
 
+    <!-- EVIDENCIAS FOTOGRÁFICAS (NUEVA SECCIÓN) -->
+    <section id="evidencias" class="evidencias-section">
+        <div class="container">
+            <h2 class="section-title">📸 Evidencias Fotográficas</h2>
+            <p class="section-subtitle">Fotos reales de cucarachas eliminadas con Mata QK. Resultados que hablan por sí solos.</p>
+            
+            <div class="evidencias-grid">
+                <!-- Evidencia 1 -->
+                <div class="evidencia-card">
+                    <div class="evidencia-image">
+                        <img src="images/evidencia-1.jpg" alt="Cucaracha eliminada en superficie metálica">
+                        <span class="evidencia-badge">✅ ELIMINADA</span>
+                    </div>
+                    <div class="evidencia-info">
+                        <h3>Cucaracha en superficie industrial</h3>
+                        <p>Cucaracha encontrada y eliminada en área de almacenamiento. Aplicación directa con Mata QK.</p>
+                    </div>
+                </div>
+
+                <!-- Evidencia 2 -->
+                <div class="evidencia-card">
+                    <div class="evidencia-image">
+                        <img src="images/evidencia-2.jpg" alt="Cucaracha eliminada cerca de fregadero con restos de producto">
+                        <span class="evidencia-badge">✅ ELIMINADA</span>
+                    </div>
+                    <div class="evidencia-info">
+                        <h3>Cucaracha en área de fregadero</h3>
+                        <p>Cucaracha eliminada cerca de tuberías. Se observan restos del producto Mata QK actuando sobre la plaga.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder para futuras evidencias -->
+                <div class="evidencia-card">
+                    <div class="evidencia-placeholder">
+                        <div class="evidencia-placeholder-icon">📷</div>
+                        <p><strong>Próxima evidencia</strong></p>
+                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Envíanos tu foto y aparecerá aquí</p>
+                    </div>
+                    <div class="evidencia-info">
+                        <h3>¿Tienes una foto?</h3>
+                        <p>Comparte tu evidencia y gana una recarga gratis de Mata QK.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: #666; margin-bottom: 1rem;">¿Eliminaste cucarachas con Mata QK? ¡Envíanos tu foto!</p>
+                <a href="https://wa.me/5219519231764?text=Hola!%20Quiero%20enviar%20mi%20foto%20de%20evidencia%20Mata%20QK" 
+                   target="_blank" class="btn-primary" style="background: var(--azul-marino);">
+                     Enviar mi Foto por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- INSTRUCCIONES DE USO -->
     <section id="instrucciones" style="background: var(--blanco);">
         <div class="container">
-            <h2 class="section-title"> Instrucciones de Uso</h2>
+            <h2 class="section-title">📋 Instrucciones de Uso</h2>
             <p class="section-subtitle">Sigue estos 6 pasos simples para obtener los mejores resultados con Mata QK</p>
             
             <div class="steps-video-container">
@@ -987,7 +1144,7 @@
                     <select id="paymentMethod" required>
                         <option value="">-- Selecciona método de pago --</option>
                         <option value="Mercado Pago">💳 Mercado Pago</option>
-                        <option value="CoDi">📱 CoDi (Pago con celular)</option>
+                        <option value="CoDi"> CoDi (Pago con celular)</option>
                         <option value="Efectivo contra entrega">💵 Efectivo contra entrega</option>
                     </select>
                 </div>
@@ -1008,7 +1165,7 @@
                 </div>
 
                 <div class="order-summary" id="orderSummary" style="display: none;">
-                    <h3>📋 Resumen de tu Pedido</h3>
+                    <h3> Resumen de tu Pedido</h3>
                     <div class="summary-item">
                         <span id="summaryProduct">-</span>
                         <span id="summaryQty">-</span>
@@ -1054,8 +1211,8 @@
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <a href="https://wa.me/5219519231764" target="_blank">📱 WhatsApp: 951 923 1764</a>
-                <a href="https://t.me/9519231764" target="_blank">✈️ Telegram: 951 923 1764</a>
-                <a href="mailto:ventas@mataqk.com">📧 ventas@mataqk.com</a>
+                <a href="https://t.me/9519231764" target="_blank">️ Telegram: 951 923 1764</a>
+                <a href="mailto:ventas@mataqk.com"> ventas@mataqk.com</a>
                 <p>📍 Entrega local en tu ciudad</p>
             </div>
             <div class="footer-col">
@@ -1068,6 +1225,7 @@
                 <h4>Enlaces Rápidos</h4>
                 <a href="#kits">Ver Kits</a>
                 <a href="#casos-reales">Casos Reales</a>
+                <a href="#evidencias">Evidencias</a>
                 <a href="#instrucciones">Instrucciones</a>
                 <a href="#pedido">Hacer Pedido</a>
             </div>
@@ -1167,7 +1325,7 @@
             // Mostrar mensaje personalizado según método de pago
             if (orderData.metodoPago === 'CoDi') {
                 document.getElementById('modalMessage').innerHTML = 
-                    `<strong> Solicitud de Pago CoDi</strong><br><br>` +
+                    `<strong>📱 Solicitud de Pago CoDi</strong><br><br>` +
                     `Hemos recibido tu pedido. Te enviaremos un mensaje de WhatsApp en los próximos minutos ` +
                     `para generarte el código CoDi y completar tu pago de <strong>$${orderData.total} MXN</strong>.<br><br>` +
                     `Una vez confirmado el pago, te notificaremos para coordinar la entrega.`;
@@ -1194,7 +1352,6 @@
             let message = '';
             
             if (data.metodoPago === 'CoDi') {
-                // Mensaje especial para CoDi
                 message = `📱 *SOLICITUD DE PAGO CoDi - MATA QK*%0A%0A` +
                     `📋 *Pedido:* ${orderNumber}%0A` +
                     `📦 *Producto:* ${data.producto}%0A` +
@@ -1211,17 +1368,16 @@
                     `───────────────────%0A` +
                     `*Por favor, generar código CoDi por $${data.total} MXN y enviar al cliente para completar el pago.*`;
             } else {
-                // Mensaje normal para otros métodos
                 message = `🛒 *NUEVO PEDIDO MATA QK*%0A%0A` +
-                    `📋 *Pedido:* ${orderNumber}%0A` +
+                    ` *Pedido:* ${orderNumber}%0A` +
                     `📦 *Producto:* ${data.producto}%0A` +
-                    ` *Cantidad:* ${data.cantidad}%0A` +
+                    `🔢 *Cantidad:* ${data.cantidad}%0A` +
                     `💰 *Total:* $${data.total} MXN%0A%0A` +
                     `👤 *Cliente:* ${data.nombre}%0A` +
                     `📱 *Teléfono:* ${data.telefono}%0A` +
                     `📧 *Email:* ${data.email}%0A%0A` +
-                    `📍 *Dirección:* ${data.direccion}, Col. ${data.colonia}, CP ${data.cp}, ${data.ciudad}%0A` +
-                    `📝 *Referencias:* ${data.referencias || 'Ninguna'}%0A%0A` +
+                    ` *Dirección:* ${data.direccion}, Col. ${data.colonia}, CP ${data.cp}, ${data.ciudad}%0A` +
+                    ` *Referencias:* ${data.referencias || 'Ninguna'}%0A%0A` +
                     `👤 *Contacto alterno:* ${data.personaAlterna || 'N/A'} - ${data.telAlterno || 'N/A'}%0A` +
                     `💳 *Pago:* ${data.metodoPago}%0A` +
                     `⏰ *Horario:* ${data.horarioEntrega}%0A%0A` +
@@ -1279,12 +1435,10 @@
             }
         }
 
-        // Inicializar
         document.addEventListener('DOMContentLoaded', function() {
             showStep(1);
         });
 
-        // Navegación con teclado
         document.addEventListener('keydown', function(e) {
             const instruccionesSection = document.getElementById('instrucciones');
             const rect = instruccionesSection.getBoundingClientRect();
@@ -1296,7 +1450,6 @@
             }
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
