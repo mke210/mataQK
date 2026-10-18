@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mata QK - Concentrado mata cucarachas. Kits con atomizador y recargas. Entrega local. Casos reales comprobados.">
     <title>Mata QK | Concentrado Mata Cucarachas - Kits y Recargas</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo-mataqk.png">
+
+    <!-- Vista previa al compartir en WhatsApp / Facebook.
+         IMPORTANTE: cuando tengas el dominio publicado, cambia "og:image" y "og:url"
+         por la dirección completa (ej. https://tudominio.com/images/kit-2-familiar.jpg),
+         WhatsApp no muestra la imagen si la ruta es relativa. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mata QK | Concentrado Mata Cucarachas">
+    <meta property="og:description" content="Kits con atomizador y recargas concentradas. Mezcla con agua, rocía y elimina cucarachas. Entrega local gratis.">
+    <meta property="og:image" content="images/kit-2-familiar.jpg">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -22,6 +37,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -103,7 +120,8 @@
         .btn-primary:hover { background: var(--verde-claro); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4); }
 
         /* SECCIONES */
-        section { padding: 4rem 2rem; }
+        section { padding: 4rem 2rem; scroll-margin-top: 80px; }
+        footer { scroll-margin-top: 80px; }
         .container { max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; font-size: 2.2rem; color: var(--azul-marino); margin-bottom: 0.5rem; }
         .section-subtitle { text-align: center; color: #666; margin-bottom: 3rem; font-size: 1.1rem; }
@@ -159,8 +177,10 @@
         .kit-includes li { padding: 0.4rem 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
         .kit-includes li::before { content: '✓'; color: var(--verde); font-weight: 700; }
         .kit-price { font-size: 2.2rem; font-weight: 800; color: var(--azul-marino); margin-bottom: 0.5rem; }
-        .kit-price small { font-size: 1rem; color: #999; text-decoration: line-through; display: block; font-weight: 400; }
-        .kit-savings { background: #e8f5e9; color: var(--verde); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+        .kit-price small { font-size: 0.9rem; color: #999; display: block; font-weight: 400; }
+        .kit-price small s { text-decoration: line-through; }
+        .kit-per-liter { font-size: 0.85rem; color: #666; margin-bottom: 1rem; }
+        .kit-savings { background: #e8f5e9; color: var(--verde); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; align-self: flex-start; }
         
         .btn-kit {
             width: 100%;
@@ -185,7 +205,7 @@
             color: var(--blanco);
             border: none;
             border-radius: 10px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -217,6 +237,31 @@
         .recarga-content p { color: #666; margin-bottom: 1.5rem; }
         .recarga-price { font-size: 2.5rem; font-weight: 800; color: var(--azul-marino); margin-bottom: 1.5rem; }
         .recarga-price small { font-size: 1rem; color: #999; font-weight: 400; }
+        .recarga-price { margin-bottom: 0.6rem; }
+        .promo-tag {
+            display: inline-block;
+            background: #e53935;
+            color: var(--blanco);
+            padding: 0.6rem 1.4rem;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.35);
+            animation: promoPulse 2s ease-in-out infinite;
+        }
+        .promo-tag small { display: block; font-size: 0.8rem; font-weight: 400; opacity: 0.95; }
+        @keyframes promoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+        .envio-gratis {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
 
         /* CÓMO FUNCIONA */
         .how-it-works { background: var(--gris-claro); }
@@ -233,7 +278,7 @@
         }
         .step h3 { color: var(--azul-marino); margin-bottom: 0.5rem; }
 
-        /* CASOS REALES - VIDEOS TAMAÑO REDUCIDO */
+        /* CASOS REALES */
         .videos-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -247,6 +292,7 @@
             box-shadow: var(--sombra);
             transition: all 0.3s;
             max-width: 350px;
+            width: 100%;
             margin: 0 auto;
         }
         .video-card:hover { transform: translateY(-5px); box-shadow: var(--sombra-hover); }
@@ -370,7 +416,7 @@
             margin-bottom: 1rem;
         }
 
-        /* INSTRUCCIONES DE USO - VIDEOS TAMAÑO REDUCIDO */
+        /* INSTRUCCIONES DE USO */
         .steps-video-container { max-width: 800px; margin: 0 auto; }
         .steps-progress { width: 100%; height: 6px; background: var(--gris); border-radius: 10px; margin-bottom: 2rem; overflow: hidden; }
         .progress-bar { height: 100%; background: linear-gradient(90deg, var(--verde), var(--verde-claro)); width: 16.66%; transition: width 0.4s ease; border-radius: 10px; }
@@ -461,6 +507,7 @@
         .form-group { margin-bottom: 1.2rem; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--azul-marino); font-size: 0.95rem; }
         .form-group label .required { color: #e53935; }
+        .form-group label .optional { color: #999; font-weight: 400; font-size: 0.85rem; }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 0.8rem 1rem;
@@ -483,7 +530,7 @@
         }
         .order-summary { background: var(--gris-claro); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; }
         .order-summary h3 { color: var(--azul-marino); margin-bottom: 1rem; }
-        .summary-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--gris); }
+        .summary-item { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--gris); }
         .summary-total { display: flex; justify-content: space-between; padding-top: 1rem; font-size: 1.3rem; font-weight: 700; color: var(--azul-marino); }
         .btn-submit {
             width: 100%;
@@ -497,6 +544,7 @@
             cursor: pointer;
             transition: all 0.3s;
             margin-top: 1rem;
+            font-family: 'Poppins', sans-serif;
         }
         .btn-submit:hover { background: var(--verde-claro); transform: translateY(-2px); }
         .payment-methods { text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gris); }
@@ -532,11 +580,37 @@
             padding: 1rem;
         }
         .modal-overlay.active { display: flex; }
-        .modal { background: white; padding: 2.5rem; border-radius: 20px; max-width: 500px; width: 100%; text-align: center; }
+        .modal { background: white; padding: 2.5rem; border-radius: 20px; max-width: 500px; width: 100%; text-align: center; max-height: 95vh; overflow-y: auto; }
         .modal-icon { font-size: 4rem; margin-bottom: 1rem; }
         .modal h2 { color: var(--azul-marino); margin-bottom: 1rem; }
-        .modal p { color: #666; margin-bottom: 1.5rem; }
-        .btn-close-modal { background: var(--azul-marino); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; cursor: pointer; font-weight: 600; }
+        .modal p { color: #666; margin-bottom: 1.2rem; }
+        .modal-actions { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.2rem; }
+        .btn-whatsapp-send {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+        }
+        .btn-whatsapp-send:hover { background: #1ebe5a; transform: translateY(-2px); }
+        .btn-whatsapp-send svg { width: 24px; height: 24px; fill: white; }
+        .modal-sent {
+            display: none;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 10px;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+        .btn-close-modal { background: var(--azul-marino); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; cursor: pointer; font-weight: 600; font-family: 'Poppins', sans-serif; }
 
         /* BOTÓN FLOTANTE WHATSAPP */
         .whatsapp-float {
@@ -567,6 +641,7 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            section, footer { scroll-margin-top: 70px; }
             .menu-toggle { display: block; }
             nav ul {
                 display: none;
@@ -584,7 +659,6 @@
             .order-form { padding: 1.5rem; }
             .section-title { font-size: 1.7rem; }
             
-            /* Videos responsivos */
             .video-card { max-width: 100%; }
             .video-container { aspect-ratio: 9/14; max-height: 320px; }
             
@@ -595,11 +669,9 @@
             .kit-price { font-size: 1.8rem; }
             .recarga-price { font-size: 2rem; }
             
-            /* Evidencias responsivo */
             .evidencias-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .evidencia-image { height: 220px; }
             
-            /* Instrucciones responsivo */
             .step-content.active { grid-template-columns: 1fr; gap: 1.2rem; }
             .step-video { max-height: 320px; margin: 0 auto; max-width: 280px; }
             .step-info h3 { font-size: 1.1rem; }
@@ -608,6 +680,7 @@
             .nav-btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
             
             .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+            .modal { padding: 1.8rem 1.3rem; }
             
             .logo img { height: 40px; }
             .logo-text { font-size: 1.4rem; }
@@ -623,7 +696,7 @@
                 <img src="images/logo-mataqk.png" alt="Mata QK Logo">
                 <div class="logo-text">Mata <span>QK</span></div>
             </div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
             <nav>
                 <ul id="navMenu">
                     <li><a href="#inicio">Inicio</a></li>
@@ -642,15 +715,14 @@
     <!-- HERO -->
     <section class="hero" id="inicio">
         <h1>Elimina Cucarachas <span>de Raíz</span></h1>
-        <p>Concentrado Mata QK: mezcla con agua, rocía y adiós plagas. Económico, efectivo y ecológico. Entrega local directa a tu puerta.</p>
+        <p>Concentrado Mata QK: mezcla con agua, rocía y adiós plagas. Económico, práctico y efectivo. Entrega local directa a tu puerta.</p>
         <a href="#kits" class="btn-primary">Ver Kits Disponibles</a>
         <div class="hero-badges">
-            <span class="badge">🚚 Entrega Local</span>
-            <span class="badge">💰 Ahorra hasta 40%</span>
-            <span class="badge">🌱 Eco-Friendly</span>
-            <span class="badge">⚡ Resultados en Segundos</span>
-            <span class="badge"> Casos Reales Comprobados</span>
-            <span class="badge"> Evidencias Fotográficas</span>
+            <span class="badge">🚚 Entrega Local Gratis</span>
+            <span class="badge">💰 Ahorra hasta 24%</span>
+            <span class="badge">⚡ Acción al Contacto</span>
+            <span class="badge">✅ Casos Reales Comprobados</span>
+            <span class="badge">📸 Evidencias Fotográficas</span>
         </div>
     </section>
 
@@ -675,12 +747,9 @@
                             <li>5 Litros de producto listo para usar</li>
                             <li>Guía de aplicación impresa</li>
                         </ul>
-                        <div class="kit-price">
-                            <small>$250 MXN</small>
-                            $200 MXN
-                        </div>
-                        <button class="btn-kit" onclick="selectKit('Kit Inicio - 1 Atomizador + 5 Bolsas', 200)">Seleccionar Kit</button>
-                        <a href="https://mpago.li/1XhWM2g" target="_blank" class="btn-mercadopago">💳 Pagar con Mercado Pago</a>
+                        <div class="kit-price">$168 MXN</div>
+                        <div class="kit-per-liter">$33.60 por litro</div>
+                        <button class="btn-kit" onclick="selectKit('inicio')">Pedir este Kit</button>
                     </div>
                 </div>
 
@@ -690,7 +759,7 @@
                         <img src="images/kit-2-familiar.jpg" alt="Kit Familiar Mata QK - 2 atomizadores + 10 bolsas de concentrado">
                     </div>
                     <div class="kit-content">
-                        <div class="kit-name">👨👩‍👧 Kit Familiar</div>
+                        <div class="kit-name">👨‍👩‍👧 Kit Familiar</div>
                         <div class="kit-desc">Perfecto para casas y protección completa</div>
                         <ul class="kit-includes">
                             <li>2 Atomizadores 1L premium</li>
@@ -699,39 +768,39 @@
                             <li>Guía de aplicación impresa</li>
                             <li>Soporte por WhatsApp</li>
                         </ul>
-                        <div class="kit-savings">¡Ahorras $50!</div>
+                        <div class="kit-savings">¡Ahorras $26!</div>
                         <div class="kit-price">
-                            <small>$450 MXN</small>
-                            $400 MXN
+                            <small>Por separado: <s>$336 MXN</s></small>
+                            $310 MXN
                         </div>
-                        <button class="btn-kit" onclick="selectKit('Kit Familiar - 2 Atomizadores + 10 Bolsas', 400)">Seleccionar Kit</button>
-                        <a href="https://mpago.li/2gtb59v" target="_blank" class="btn-mercadopago"> Pagar con Mercado Pago</a>
+                        <div class="kit-per-liter">$31.00 por litro</div>
+                        <button class="btn-kit" onclick="selectKit('familiar')">Pedir este Kit</button>
                     </div>
                 </div>
 
                 <!-- Kit 3: Negocio -->
                 <div class="kit-card">
                     <div class="kit-image">
-                        <img src="images/kit-3-negocio.jpg" alt="Kit Negocio Mata QK - 3 atomizadores + 15 bolsas de concentrado">
+                        <img src="images/kit-3-negocio.jpg" alt="Kit Negocio Mata QK - 2 atomizadores + 15 bolsas de concentrado">
                     </div>
                     <div class="kit-content">
                         <div class="kit-name">🏪 Kit Negocio</div>
                         <div class="kit-desc">Para negocios, bodegas o compra vecinal</div>
                         <ul class="kit-includes">
-                            <li>3 Atomizadores 1L premium</li>
+                            <li>2 Atomizadores 1L premium</li>
                             <li>15 Bolsas de concentrado Mata QK</li>
                             <li>15 Litros de producto listo para usar</li>
                             <li>Guía de aplicación impresa</li>
                             <li>Soporte prioritario por WhatsApp</li>
                             <li>Mejor precio por litro</li>
                         </ul>
-                        <div class="kit-savings">¡Ahorras $100!</div>
+                        <div class="kit-savings">¡Ahorras $111!</div>
                         <div class="kit-price">
-                            <small>$700 MXN</small>
-                            $600 MXN
+                            <small>Por separado: <s>$456 MXN</s></small>
+                            $345 MXN
                         </div>
-                        <button class="btn-kit" onclick="selectKit('Kit Negocio - 3 Atomizadores + 15 Bolsas', 600)">Seleccionar Kit</button>
-                        <a href="https://mpago.li/1dE12eq" target="_blank" class="btn-mercadopago">💳 Pagar con Mercado Pago</a>
+                        <div class="kit-per-liter">$23.00 por litro</div>
+                        <button class="btn-kit" onclick="selectKit('negocio')">Pedir este Kit</button>
                     </div>
                 </div>
             </div>
@@ -744,11 +813,12 @@
                 <div class="recarga-content">
                     <h3>🔄 ¿Ya tienes tu atomizador?</h3>
                     <p>Compra solo las recargas de concentrado</p>
+                    <div class="promo-tag">🎁 ¡2 bolsas más GRATIS!<small>Promoción por tiempo limitado</small></div>
                     <div class="recarga-price">
-                        $100 MXN <small>/ 5 bolsas</small>
+                        $120 MXN <small>/ 5 + 2 bolsas</small>
                     </div>
-                    <button class="btn-kit" onclick="selectKit('Recarga - 5 Bolsas Concentrado', 100)">Agregar Recarga</button>
-                    <a href="https://mpago.la/2Ms163n" target="_blank" class="btn-mercadopago" style="margin-top: 0.5rem;">💳 Pagar con Mercado Pago</a>
+                    <div class="envio-gratis">🚚 Envío gratis</div>
+                    <button class="btn-kit" onclick="selectKit('recarga')">Pedir Recarga</button>
                 </div>
             </div>
         </div>
@@ -769,7 +839,7 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Haz tu Pedido</h3>
-                    <p>Llena el formulario con tus datos y elige tu método de pago seguro.</p>
+                    <p>Llena el formulario y envíanos tu pedido por WhatsApp con un solo toque.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -808,7 +878,11 @@
                     </div>
                 </div>
 
-                <!-- Video 2 (Placeholder) -->
+                <!--
+                    VIDEOS 2 Y 3 OCULTOS HASTA QUE TENGAS EL MATERIAL REAL.
+                    Para activarlos: sube el video a la carpeta "videos/", escribe el título,
+                    la descripción y la frase real del cliente, y quita estas líneas de comentario.
+
                 <div class="video-card">
                     <div class="video-container">
                         <video controls preload="metadata">
@@ -818,13 +892,12 @@
                     </div>
                     <div class="video-info">
                         <span class="video-tag">🏪 Negocio</span>
-                        <h3>Segundo caso real próximamente</h3>
-                        <p>Descripción del segundo caso que subirás. Ej: Bodega con infestación severa eliminada con 2 atomizaciones.</p>
-                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>Testimonio del cliente</span></div>
+                        <h3>Título del caso</h3>
+                        <p>Descripción del caso.</p>
+                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>"Frase real del cliente"</span></div>
                     </div>
                 </div>
 
-                <!-- Video 3 (Placeholder) -->
                 <div class="video-card">
                     <div class="video-container">
                         <video controls preload="metadata">
@@ -834,24 +907,25 @@
                     </div>
                     <div class="video-info">
                         <span class="video-tag">👨‍👩‍👧 Casa</span>
-                        <h3>Tercer caso real próximamente</h3>
-                        <p>Descripción del tercer caso que subirás. Ej: Casa completa libre de cucarachas en 24 horas.</p>
-                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>Testimonio del cliente</span></div>
+                        <h3>Título del caso</h3>
+                        <p>Descripción del caso.</p>
+                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>"Frase real del cliente"</span></div>
                     </div>
                 </div>
+                -->
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
                 <p style="color: #666; margin-bottom: 1rem;">¿Ya usaste Mata QK? ¡Envíanos tu video y gana una recarga GRATIS!</p>
                 <a href="https://wa.me/5219519231764?text=Hola!%20Quiero%20enviar%20mi%20video%20de%20Mata%20QK" 
-                   target="_blank" class="btn-primary" style="background: var(--azul-marino);">
+                   target="_blank" rel="noopener" class="btn-primary" style="background: var(--azul-marino);">
                     📱 Enviar mi Video por WhatsApp
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- EVIDENCIAS FOTOGRÁFICAS (NUEVA SECCIÓN) -->
+    <!-- EVIDENCIAS FOTOGRÁFICAS -->
     <section id="evidencias" class="evidencias-section">
         <div class="container">
             <h2 class="section-title">📸 Evidencias Fotográficas</h2>
@@ -882,7 +956,7 @@
                     </div>
                 </div>
 
-                <!-- Placeholder para futuras evidencias -->
+                <!-- Espacio para la siguiente evidencia -->
                 <div class="evidencia-card">
                     <div class="evidencia-placeholder">
                         <div class="evidencia-placeholder-icon">📷</div>
@@ -899,8 +973,8 @@
             <div style="text-align: center; margin-top: 3rem;">
                 <p style="color: #666; margin-bottom: 1rem;">¿Eliminaste cucarachas con Mata QK? ¡Envíanos tu foto!</p>
                 <a href="https://wa.me/5219519231764?text=Hola!%20Quiero%20enviar%20mi%20foto%20de%20evidencia%20Mata%20QK" 
-                   target="_blank" class="btn-primary" style="background: var(--azul-marino);">
-                     Enviar mi Foto por WhatsApp
+                   target="_blank" rel="noopener" class="btn-primary" style="background: var(--azul-marino);">
+                    📸 Enviar mi Foto por WhatsApp
                 </a>
             </div>
         </div>
@@ -994,7 +1068,7 @@
                             <h3>Cierra y agita bien</h3>
                             <p>Enrosca firmemente la tapa con el atomizador. Agita vigorosamente durante 10-15 segundos para integrar completamente la fórmula con el agua.</p>
                             <div class="step-tip">
-                                💡 <strong>Tip:</strong> Escucharás un ligero cambio de color cuando esté bien mezclado.
+                                💡 <strong>Tip:</strong> La mezcla está lista cuando se ve uniforme y no quedan residuos asentados en el fondo.
                             </div>
                         </div>
                     </div>
@@ -1027,10 +1101,10 @@
                         </div>
                         <div class="step-info">
                             <span class="step-number-badge">Paso 6</span>
-                            <h3>¡Listo! Resultados comprobados</h3>
-                            <p>Las cucarachas quedarán incapacitadas en segundos. Para mejores resultados, aplica por la noche y repite la aplicación cada 7 días durante las primeras 3 semanas.</p>
+                            <h3>Repite para eliminar la plaga</h3>
+                            <p>Las cucarachas que reciben el rocío directo quedan incapacitadas en segundos. Para acabar con la plaga completa, aplica por la noche y repite cada 7 días durante las primeras 3 semanas.</p>
                             <div class="step-tip">
-                                ✅ <strong>Resultado:</strong> Eliminación total en 2-3 semanas con aplicaciones consistentes.
+                                ✅ <strong>Resultado:</strong> Eliminación de la plaga en 2-3 semanas con aplicaciones constantes.
                             </div>
                         </div>
                     </div>
@@ -1054,68 +1128,68 @@
     <section class="order-section" id="pedido">
         <div class="container">
             <h2 class="section-title">Realiza tu Pedido</h2>
-            <p class="section-subtitle">Completa tus datos y te contactaremos para confirmar la entrega</p>
+            <p class="section-subtitle">Completa tus datos y envíanos tu pedido por WhatsApp</p>
             
             <form class="order-form" id="orderForm" onsubmit="handleOrder(event)">
                 <div class="form-note">
-                    📦 Todos los campos marcados con <span style="color: #e53935;">*</span> son obligatorios. Tu información es 100% segura.
+                    📦 Todos los campos marcados con <span style="color: #e53935;">*</span> son obligatorios.
                 </div>
 
                 <div class="form-group">
-                    <label>Producto Seleccionado <span class="required">*</span></label>
+                    <label for="selectedProduct">Producto Seleccionado <span class="required">*</span></label>
                     <select id="selectedProduct" required onchange="updateSummary()">
                         <option value="">-- Selecciona un kit --</option>
-                        <option value="Kit Inicio - 1 Atomizador + 5 Bolsas|200">Kit Inicio - 1 Atomizador + 5 Bolsas ($200)</option>
-                        <option value="Kit Familiar - 2 Atomizadores + 10 Bolsas|400">Kit Familiar - 2 Atomizadores + 10 Bolsas ($400)</option>
-                        <option value="Kit Negocio - 3 Atomizadores + 15 Bolsas|600">Kit Negocio - 3 Atomizadores + 15 Bolsas ($600)</option>
-                        <option value="Recarga - 5 Bolsas Concentrado|100">Recarga - 5 Bolsas Concentrado ($100)</option>
+                        <option value="inicio">Kit Inicio - 1 Atomizador + 5 Bolsas ($168)</option>
+                        <option value="familiar">Kit Familiar - 2 Atomizadores + 10 Bolsas ($310)</option>
+                        <option value="negocio">Kit Negocio - 2 Atomizadores + 15 Bolsas ($345)</option>
+                        <option value="recarga">Recarga - 5 Bolsas + 2 GRATIS ($120)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Cantidad <span class="required">*</span></label>
-                    <input type="number" id="quantity" min="1" value="1" required onchange="updateSummary()">
+                    <label for="quantity">Cantidad <span class="required">*</span></label>
+                    <input type="number" id="quantity" min="1" max="50" step="1" value="1" required oninput="updateSummary()">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Nombre Completo <span class="required">*</span></label>
+                        <label for="fullName">Nombre Completo <span class="required">*</span></label>
                         <input type="text" id="fullName" placeholder="Ej: Juan Pérez García" required>
                     </div>
                     <div class="form-group">
-                        <label>Teléfono / WhatsApp <span class="required">*</span></label>
+                        <label for="phone">Teléfono / WhatsApp <span class="required">*</span></label>
                         <input type="tel" id="phone" placeholder="Ej: 951 123 4567" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Correo Electrónico <span class="required">*</span></label>
-                    <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
+                    <label for="email">Correo Electrónico <span class="optional">(opcional)</span></label>
+                    <input type="email" id="email" placeholder="tucorreo@ejemplo.com">
                 </div>
 
                 <div class="form-group">
-                    <label>Dirección de Entrega <span class="required">*</span></label>
+                    <label for="address">Dirección de Entrega <span class="required">*</span></label>
                     <input type="text" id="address" placeholder="Calle, número exterior e interior" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Colonia <span class="required">*</span></label>
+                        <label for="colony">Colonia <span class="required">*</span></label>
                         <input type="text" id="colony" placeholder="Ej: Centro" required>
                     </div>
                     <div class="form-group">
-                        <label>Código Postal <span class="required">*</span></label>
-                        <input type="text" id="zipCode" placeholder="Ej: 71000" required>
+                        <label for="zipCode">Código Postal <span class="required">*</span></label>
+                        <input type="text" id="zipCode" placeholder="Ej: 71000" inputmode="numeric" pattern="[0-9]{5}" title="5 dígitos" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Ciudad / Municipio <span class="required">*</span></label>
+                    <label for="city">Ciudad / Municipio <span class="required">*</span></label>
                     <input type="text" id="city" placeholder="Ej: Oaxaca de Juárez" required>
                 </div>
 
                 <div class="form-group">
-                    <label>Referencias de la Dirección</label>
+                    <label for="references">Referencias de la Dirección</label>
                     <textarea id="references" rows="2" placeholder="Ej: Casa color azul, portón negro"></textarea>
                 </div>
 
@@ -1125,32 +1199,32 @@
                     
                     <div class="form-row">
                         <div class="form-group" style="margin-bottom: 0.5rem;">
-                            <label>Nombre de la Persona</label>
+                            <label for="altName">Nombre de la Persona</label>
                             <input type="text" id="altName" placeholder="Nombre de quien puede recibir">
                         </div>
                         <div class="form-group" style="margin-bottom: 0.5rem;">
-                            <label>Teléfono de Contacto</label>
+                            <label for="altPhone">Teléfono de Contacto</label>
                             <input type="tel" id="altPhone" placeholder="Teléfono de la persona">
                         </div>
                     </div>
                     <div class="form-group" style="margin-bottom: 0;">
-                        <label>Relación / Instrucciones</label>
+                        <label for="altRelation">Relación / Instrucciones</label>
                         <input type="text" id="altRelation" placeholder="Ej: Mi esposa, el portero">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Método de Pago <span class="required">*</span></label>
+                    <label for="paymentMethod">Método de Pago <span class="required">*</span></label>
                     <select id="paymentMethod" required>
                         <option value="">-- Selecciona método de pago --</option>
                         <option value="Mercado Pago">💳 Mercado Pago</option>
-                        <option value="CoDi"> CoDi (Pago con celular)</option>
+                        <option value="CoDi">📲 CoDi (Pago con celular)</option>
                         <option value="Efectivo contra entrega">💵 Efectivo contra entrega</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label>Horario Preferido de Entrega</label>
+                    <label for="deliveryTime">Horario Preferido de Entrega</label>
                     <select id="deliveryTime">
                         <option value="Mañana (9:00 - 12:00)">Mañana (9:00 - 12:00)</option>
                         <option value="Mediodía (12:00 - 15:00)">Mediodía (12:00 - 15:00)</option>
@@ -1160,12 +1234,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Comentarios Adicionales</label>
+                    <label for="comments">Comentarios Adicionales</label>
                     <textarea id="comments" rows="2" placeholder="¿Algo que debamos saber?"></textarea>
                 </div>
 
                 <div class="order-summary" id="orderSummary" style="display: none;">
-                    <h3> Resumen de tu Pedido</h3>
+                    <h3>🧾 Resumen de tu Pedido</h3>
                     <div class="summary-item">
                         <span id="summaryProduct">-</span>
                         <span id="summaryQty">-</span>
@@ -1187,14 +1261,14 @@
                     </label>
                 </div>
 
-                <button type="submit" class="btn-submit">🛒 Confirmar Pedido</button>
+                <button type="submit" class="btn-submit">🛒 Continuar con mi Pedido</button>
 
                 <div class="payment-methods">
-                    <p>🔒 Pagos 100% seguros procesados por:</p>
+                    <p>Formas de pago aceptadas:</p>
                     <div class="payment-icons">
                         <span class="payment-icon">💳 Mercado Pago</span>
                         <img src="images/codi-logo.png" alt="CoDi" class="payment-icon-logo">
-                        <span class="payment-icon">💵 Efectivo</span>
+                        <span class="payment-icon">💵 Efectivo contra entrega</span>
                     </div>
                 </div>
             </form>
@@ -1210,10 +1284,10 @@
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <a href="https://wa.me/5219519231764" target="_blank">📱 WhatsApp: 951 923 1764</a>
-                <a href="https://t.me/9519231764" target="_blank">️ Telegram: 951 923 1764</a>
-                <a href="mailto:ventas@mataqk.com"> ventas@mataqk.com</a>
-                <p>📍 Entrega local en tu ciudad</p>
+                <a href="https://wa.me/5219519231764" target="_blank" rel="noopener">📱 WhatsApp: 951 923 1764</a>
+                <a href="https://t.me/+529519231764" target="_blank" rel="noopener">✈️ Telegram: 951 923 1764</a>
+                <a href="mailto:ventas@mataqk.com">📧 ventas@mataqk.com</a>
+                <p>📍 Entrega local en Oaxaca de Juárez y zona conurbada</p>
             </div>
             <div class="footer-col">
                 <h4>Horario de Atención</h4>
@@ -1231,12 +1305,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Mata QK. Todos los derechos reservados.</p>
+            <p>© <span id="currentYear">2026</span> Mata QK. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5219519231764?text=Hola!%20Me%20interesa%20Mata%20QK" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+    <a href="https://wa.me/5219519231764?text=Hola!%20Me%20interesa%20Mata%20QK" class="whatsapp-float" target="_blank" rel="noopener" title="Chatea con nosotros" aria-label="Chatea con nosotros por WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
@@ -1245,46 +1319,70 @@
     <!-- MODAL DE CONFIRMACIÓN -->
     <div class="modal-overlay" id="confirmationModal">
         <div class="modal">
-            <div class="modal-icon">✅</div>
-            <h2>¡Pedido Recibido!</h2>
-            <p id="modalMessage">Te contactaremos por WhatsApp en las próximas 2 horas para confirmar la entrega y enviarte el link de pago.</p>
+            <div class="modal-icon">📲</div>
+            <h2 id="modalTitle">¡Último paso!</h2>
+            <p>Toca el botón verde para <strong>enviarnos tu pedido por WhatsApp</strong>. Tu pedido queda registrado cuando nos llega ese mensaje.</p>
             <p><strong>Número de pedido:</strong> <span id="orderNumber"></span></p>
-            <button class="btn-close-modal" onclick="closeModal()">Entendido</button>
+
+            <div class="modal-actions">
+                <a href="#" id="waSendBtn" class="btn-whatsapp-send" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0Z"/></svg>
+                    Enviar pedido por WhatsApp
+                </a>
+                <a href="#" id="mpPayBtn" class="btn-mercadopago" target="_blank" rel="noopener" style="display: none;">💳 Pagar ahora con Mercado Pago</a>
+            </div>
+
+            <div class="modal-sent" id="modalSent">✅ ¡Gracias! Si ya enviaste el mensaje, te responderemos para confirmar tu entrega.</div>
+
+            <p id="modalMessage" style="font-size: 0.9rem;"></p>
+            <button class="btn-close-modal" onclick="closeModal()">Cerrar</button>
         </div>
     </div>
 
     <script>
+        // ===================== CONFIGURACIÓN =====================
+        // Número de WhatsApp que recibe los pedidos
+        const WHATSAPP = '5219519231764';
+
+        // Productos y precios. Para cambiar un precio, cámbialo aquí
+        // y también en el texto de la tarjeta y del <select>.
+        // mpLink: pega aquí la liga de cobro de Mercado Pago con el precio NUEVO.
+        // Si se deja vacío, al cliente se le dice que le enviarán la liga por WhatsApp.
+        const PRODUCTOS = {
+            inicio:   { nombre: 'Kit Inicio - 1 Atomizador + 5 Bolsas',      precio: 168, mpLink: '' },
+            familiar: { nombre: 'Kit Familiar - 2 Atomizadores + 10 Bolsas', precio: 310, mpLink: '' },
+            negocio:  { nombre: 'Kit Negocio - 2 Atomizadores + 15 Bolsas',  precio: 345, mpLink: '' },
+            recarga:  { nombre: 'Recarga - 5 Bolsas + 2 GRATIS (promoción)',  precio: 120, mpLink: '' }
+        };
+        // =========================================================
+
         // MENÚ MÓVIL
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
         }
 
         // SELECCIONAR KIT
-        function selectKit(productName, price) {
-            const select = document.getElementById('selectedProduct');
-            for (let option of select.options) {
-                if (option.value.includes(productName)) {
-                    select.value = option.value;
-                    break;
-                }
-            }
+        function selectKit(key) {
+            document.getElementById('selectedProduct').value = key;
             updateSummary();
             document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function getQuantity() {
+            const q = parseInt(document.getElementById('quantity').value, 10);
+            return Number.isFinite(q) && q > 0 ? q : 0;
+        }
+
         // ACTUALIZAR RESUMEN
         function updateSummary() {
-            const productSelect = document.getElementById('selectedProduct');
-            const quantity = document.getElementById('quantity').value;
+            const producto = PRODUCTOS[document.getElementById('selectedProduct').value];
+            const quantity = getQuantity();
             const summaryDiv = document.getElementById('orderSummary');
             
-            if (productSelect.value && quantity > 0) {
-                const [name, price] = productSelect.value.split('|');
-                const total = price * quantity;
-                
-                document.getElementById('summaryProduct').textContent = name;
+            if (producto && quantity > 0) {
+                document.getElementById('summaryProduct').textContent = producto.nombre;
                 document.getElementById('summaryQty').textContent = `x${quantity}`;
-                document.getElementById('summaryTotal').textContent = `$${total} MXN`;
+                document.getElementById('summaryTotal').textContent = `$${producto.precio * quantity} MXN`;
                 summaryDiv.style.display = 'block';
             } else {
                 summaryDiv.style.display = 'none';
@@ -1294,97 +1392,106 @@
         // MANEJAR PEDIDO
         function handleOrder(e) {
             e.preventDefault();
-            
-            const orderData = {
-                producto: document.getElementById('selectedProduct').value.split('|')[0],
-                precio: document.getElementById('selectedProduct').value.split('|')[1],
-                cantidad: document.getElementById('quantity').value,
-                nombre: document.getElementById('fullName').value,
-                telefono: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                direccion: document.getElementById('address').value,
-                colonia: document.getElementById('colony').value,
-                cp: document.getElementById('zipCode').value,
-                ciudad: document.getElementById('city').value,
-                referencias: document.getElementById('references').value,
-                personaAlterna: document.getElementById('altName').value,
-                telAlterno: document.getElementById('altPhone').value,
-                relacionAlterna: document.getElementById('altRelation').value,
-                metodoPago: document.getElementById('paymentMethod').value,
-                horarioEntrega: document.getElementById('deliveryTime').value,
-                comentarios: document.getElementById('comments').value,
-                total: document.getElementById('selectedProduct').value.split('|')[1] * document.getElementById('quantity').value,
-                fecha: new Date().toLocaleString('es-MX')
+
+            const key = document.getElementById('selectedProduct').value;
+            const producto = PRODUCTOS[key];
+            const cantidad = getQuantity();
+            if (!producto || cantidad < 1) return;
+
+            const val = id => document.getElementById(id).value.trim();
+
+            const data = {
+                producto: producto.nombre,
+                precio: producto.precio,
+                cantidad,
+                total: producto.precio * cantidad,
+                nombre: val('fullName'),
+                telefono: val('phone'),
+                email: val('email'),
+                direccion: val('address'),
+                colonia: val('colony'),
+                cp: val('zipCode'),
+                ciudad: val('city'),
+                referencias: val('references'),
+                personaAlterna: val('altName'),
+                telAlterno: val('altPhone'),
+                relacionAlterna: val('altRelation'),
+                metodoPago: val('paymentMethod'),
+                horarioEntrega: val('deliveryTime'),
+                comentarios: val('comments')
             };
 
             const orderNumber = 'MQK-' + Date.now().toString().slice(-6);
             document.getElementById('orderNumber').textContent = orderNumber;
 
-            localStorage.setItem('lastOrder', JSON.stringify({...orderData, orderNumber}));
-            
-            // Mostrar mensaje personalizado según método de pago
-            if (orderData.metodoPago === 'CoDi') {
-                document.getElementById('modalMessage').innerHTML = 
-                    `<strong>📱 Solicitud de Pago CoDi</strong><br><br>` +
-                    `Hemos recibido tu pedido. Te enviaremos un mensaje de WhatsApp en los próximos minutos ` +
-                    `para generarte el código CoDi y completar tu pago de <strong>$${orderData.total} MXN</strong>.<br><br>` +
-                    `Una vez confirmado el pago, te notificaremos para coordinar la entrega.`;
-            } else if (orderData.metodoPago === 'Mercado Pago') {
-                document.getElementById('modalMessage').textContent = 
-                    'Te contactaremos por WhatsApp en las próximas 2 horas para enviarte el link de pago de Mercado Pago.';
-            } else {
-                document.getElementById('modalMessage').textContent = 
-                    'Te contactaremos por WhatsApp en las próximas 2 horas para confirmar tu pedido y coordinar la entrega. Pago contra entrega.';
-            }
-            
-            // Enviar por WhatsApp
-            sendToWhatsApp(orderData, orderNumber);
+            // Liga de WhatsApp con el pedido (se abre cuando el cliente toca el botón)
+            const waBtn = document.getElementById('waSendBtn');
+            waBtn.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(buildMessage(data, orderNumber))}`;
 
+            // Mensaje según el método de pago
+            const mpBtn = document.getElementById('mpPayBtn');
+            mpBtn.style.display = 'none';
+            const msg = document.getElementById('modalMessage');
+
+            if (data.metodoPago === 'CoDi') {
+                msg.textContent = `Después de recibir tu mensaje te enviaremos el código CoDi por $${data.total} MXN. Una vez confirmado el pago, coordinamos la entrega.`;
+            } else if (data.metodoPago === 'Mercado Pago') {
+                if (producto.mpLink && cantidad === 1) {
+                    mpBtn.href = producto.mpLink;
+                    mpBtn.style.display = 'block';
+                    msg.textContent = 'Primero envía tu pedido por WhatsApp y después puedes pagar con el botón azul.';
+                } else {
+                    msg.textContent = `Después de recibir tu mensaje te enviaremos la liga de Mercado Pago por $${data.total} MXN.`;
+                }
+            } else {
+                msg.textContent = `Pagas $${data.total} MXN en efectivo al recibir tu pedido. Te confirmaremos la entrega por WhatsApp.`;
+            }
+
+            document.getElementById('modalSent').style.display = 'none';
             document.getElementById('confirmationModal').classList.add('active');
-            document.getElementById('orderForm').reset();
-            document.getElementById('orderSummary').style.display = 'none';
         }
 
-        // ENVIAR POR WHATSAPP
-        function sendToWhatsApp(data, orderNumber) {
-            const phone = '5219519231764';
-            
-            let message = '';
-            
-            if (data.metodoPago === 'CoDi') {
-                message = `📱 *SOLICITUD DE PAGO CoDi - MATA QK*%0A%0A` +
-                    `📋 *Pedido:* ${orderNumber}%0A` +
-                    `📦 *Producto:* ${data.producto}%0A` +
-                    `🔢 *Cantidad:* ${data.cantidad}%0A` +
-                    `💰 *Total a Pagar:* $${data.total} MXN%0A%0A` +
-                    `👤 *Cliente:* ${data.nombre}%0A` +
-                    `📱 *Teléfono:* ${data.telefono}%0A` +
-                    `📧 *Email:* ${data.email}%0A%0A` +
-                    `📍 *Dirección:* ${data.direccion}, Col. ${data.colonia}, CP ${data.cp}, ${data.ciudad}%0A` +
-                    `📝 *Referencias:* ${data.referencias || 'Ninguna'}%0A%0A` +
-                    `💳 *Método de Pago:* CoDi (Código QR)%0A` +
-                    `⏰ *Horario:* ${data.horarioEntrega}%0A%0A` +
-                    `💬 *Comentarios:* ${data.comentarios || 'Ninguno'}%0A%0A` +
-                    `───────────────────%0A` +
-                    `*Por favor, generar código CoDi por $${data.total} MXN y enviar al cliente para completar el pago.*`;
-            } else {
-                message = `🛒 *NUEVO PEDIDO MATA QK*%0A%0A` +
-                    ` *Pedido:* ${orderNumber}%0A` +
-                    `📦 *Producto:* ${data.producto}%0A` +
-                    `🔢 *Cantidad:* ${data.cantidad}%0A` +
-                    `💰 *Total:* $${data.total} MXN%0A%0A` +
-                    `👤 *Cliente:* ${data.nombre}%0A` +
-                    `📱 *Teléfono:* ${data.telefono}%0A` +
-                    `📧 *Email:* ${data.email}%0A%0A` +
-                    ` *Dirección:* ${data.direccion}, Col. ${data.colonia}, CP ${data.cp}, ${data.ciudad}%0A` +
-                    ` *Referencias:* ${data.referencias || 'Ninguna'}%0A%0A` +
-                    `👤 *Contacto alterno:* ${data.personaAlterna || 'N/A'} - ${data.telAlterno || 'N/A'}%0A` +
-                    `💳 *Pago:* ${data.metodoPago}%0A` +
-                    `⏰ *Horario:* ${data.horarioEntrega}%0A%0A` +
-                    `💬 *Comentarios:* ${data.comentarios || 'Ninguno'}`;
+        // Al tocar "Enviar pedido por WhatsApp" ya se puede limpiar el formulario
+        document.getElementById('waSendBtn').addEventListener('click', function () {
+            document.getElementById('orderForm').reset();
+            updateSummary();
+            document.getElementById('modalSent').style.display = 'block';
+        });
+
+        // ARMAR MENSAJE DE WHATSAPP (texto normal; se codifica con encodeURIComponent)
+        function buildMessage(d, orderNumber) {
+            const contactoAlterno = d.personaAlterna || d.telAlterno
+                ? `${d.personaAlterna || 'Sin nombre'} - ${d.telAlterno || 'Sin teléfono'}${d.relacionAlterna ? ` (${d.relacionAlterna})` : ''}`
+                : 'N/A';
+
+            const lineas = [
+                d.metodoPago === 'CoDi' ? '📲 *SOLICITUD DE PAGO CoDi - MATA QK*' : '🛒 *NUEVO PEDIDO MATA QK*',
+                '',
+                `📋 *Pedido:* ${orderNumber}`,
+                `📦 *Producto:* ${d.producto}`,
+                `🔢 *Cantidad:* ${d.cantidad}`,
+                `💰 *Total:* $${d.total} MXN`,
+                '',
+                `👤 *Cliente:* ${d.nombre}`,
+                `📱 *Teléfono:* ${d.telefono}`,
+                `📧 *Email:* ${d.email || 'No proporcionado'}`,
+                '',
+                `📍 *Dirección:* ${d.direccion}, Col. ${d.colonia}, CP ${d.cp}, ${d.ciudad}`,
+                `📝 *Referencias:* ${d.referencias || 'Ninguna'}`,
+                `👥 *Contacto alterno:* ${contactoAlterno}`,
+                '',
+                `💳 *Pago:* ${d.metodoPago === 'CoDi' ? 'CoDi (Código QR)' : d.metodoPago}`,
+                `⏰ *Horario:* ${d.horarioEntrega}`,
+                '',
+                `💬 *Comentarios:* ${d.comentarios || 'Ninguno'}`
+            ];
+
+            if (d.metodoPago === 'CoDi') {
+                lineas.push('', '───────────────────',
+                    `*Por favor, generar código CoDi por $${d.total} MXN y enviar al cliente para completar el pago.*`);
             }
-            
-            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+
+            return lineas.join('\n');
         }
 
         // CERRAR MODAL
@@ -1437,27 +1544,27 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             showStep(1);
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
 
+        // Flechas del teclado: solo cambian de paso si no se está usando un video o un campo
         document.addEventListener('keydown', function(e) {
-            const instruccionesSection = document.getElementById('instrucciones');
-            const rect = instruccionesSection.getBoundingClientRect();
+            if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+            if (e.target.closest('video, input, textarea, select')) return;
+            if (document.getElementById('confirmationModal').classList.contains('active')) return;
+
+            const rect = document.getElementById('instrucciones').getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
             
             if (isVisible) {
-                if (e.key === 'ArrowLeft') changeStep(-1);
-                else if (e.key === 'ArrowRight') changeStep(1);
+                changeStep(e.key === 'ArrowLeft' ? -1 : 1);
             }
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.getElementById('navMenu').classList.remove('active');
-                }
+        // Cerrar menú móvil al elegir una sección (el desplazamiento lo hace el CSS)
+        document.querySelectorAll('#navMenu a').forEach(anchor => {
+            anchor.addEventListener('click', function () {
+                document.getElementById('navMenu').classList.remove('active');
             });
         });
     </script>
