@@ -87,8 +87,9 @@
             color: var(--verde-claro); 
         }
 
-        nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { color: var(--blanco); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+        nav ul { display: flex; list-style: none; gap: 1.4rem; }
+        nav a { color: var(--blanco); text-decoration: none; font-weight: 400; transition: color 0.3s; white-space: nowrap; font-size: 0.95rem; }
+
         nav a:hover { color: var(--verde-claro); }
         .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
@@ -198,26 +199,6 @@
         }
         .btn-kit:hover { background: var(--verde); }
         
-        .btn-mercadopago {
-            width: 100%;
-            padding: 0.8rem;
-            background: #009ee3;
-            color: var(--blanco);
-            border: none;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Poppins', sans-serif;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-        }
-        .btn-mercadopago:hover { 
-            background: #0085c4; 
-            transform: translateY(-2px);
-        }
 
         /* RECARGA */
         .recarga-section {
@@ -263,6 +244,65 @@
             margin-bottom: 1.2rem;
         }
 
+        .qr-seccion { margin-top: 3rem; background: var(--gris-claro); border-radius: 20px; padding: 2rem 1.5rem; }
+        .qr-seccion-titulo { text-align: center; color: var(--azul-marino); font-size: 1.6rem; margin-bottom: 0.3rem; }
+        .qr-seccion-sub { text-align: center; color: #666; margin-bottom: 1.5rem; }
+        .qr-pasos { max-width: 720px; margin: 0 auto 2rem; padding-left: 1.4rem; color: #444; font-size: 0.95rem; }
+        .qr-pasos li { margin-bottom: 0.6rem; }
+        .qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+        .qr-card { background: var(--blanco); border-radius: 15px; padding: 1.2rem; text-align: center; box-shadow: var(--sombra); }
+        .qr-card h4 { color: var(--azul-marino); font-size: 1.05rem; }
+        .qr-card small { color: #888; display: block; margin-bottom: 0.6rem; }
+        .qr-card img { width: 100%; max-width: 200px; height: auto; image-rendering: pixelated; display: block; margin: 0 auto 0.6rem; }
+        .qr-card-precio { font-size: 1.5rem; font-weight: 800; color: var(--azul-marino); margin-bottom: 0.6rem; }
+        .qr-comprobante { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.8rem; }
+        .qr-comprobante a { flex: 1 1 260px; max-width: 340px; }
+        .qr-seccion-nota { text-align: center; color: #777; font-size: 0.85rem; margin-top: 1rem; }
+        .aviso-diseno {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            background: #fff8e1;
+            border-left: 4px solid #ffa000;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            color: #555;
+            font-size: 0.92rem;
+        }
+        .aviso-diseno-icon { font-size: 1.3rem; line-height: 1.4; }
+        .aviso-diseno strong { color: var(--azul-marino); }
+
+        /* BENEFICIOS */
+        .kit-per-liter strong { color: var(--verde); font-size: 1rem; }
+        .recarga-rinde { color: #555 !important; font-size: 0.92rem; margin-bottom: 0.8rem !important; }
+        .recarga-rinde strong { color: var(--azul-marino); }
+        .beneficios-section { background: var(--blanco); }
+        .rinde-destacado {
+            display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap;
+            background: linear-gradient(135deg, var(--azul-marino), var(--azul-medio));
+            color: var(--blanco); border-radius: 20px; padding: 2rem 1.5rem; margin-bottom: 2rem;
+        }
+        .rinde-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 150px; }
+        .rinde-num { font-size: 2.4rem; font-weight: 800; color: var(--verde-claro); line-height: 1.1; }
+        .rinde-txt { font-size: 0.9rem; opacity: 0.9; }
+        .rinde-flecha { font-size: 2rem; color: var(--verde-claro); }
+        .tabla-wrap { overflow-x: auto; border-radius: 15px; box-shadow: var(--sombra); }
+        .tabla-rinde { width: 100%; border-collapse: collapse; background: var(--blanco); font-size: 0.95rem; }
+        .tabla-rinde th { background: var(--gris-claro); color: var(--azul-marino); padding: 0.9rem; text-align: center; font-weight: 700; }
+        .tabla-rinde td { padding: 0.9rem; text-align: center; border-top: 1px solid var(--gris); }
+        .tabla-rinde td:first-child { text-align: left; }
+        .tabla-rinde td small { display: block; color: #888; font-size: 0.8rem; }
+        .tabla-rinde .ahorro { color: var(--verde); font-weight: 700; }
+        .tabla-rinde .fila-popular { background: #f1f8e9; }
+        .tabla-nota { text-align: center; color: #777; font-size: 0.85rem; margin-top: 1rem; }
+        .seguro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .seguro-card { background: #f1f8e9; border-radius: 15px; padding: 1.5rem; text-align: center; border: 2px solid #dcedc8; }
+        .seguro-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .seguro-card h3 { color: var(--azul-marino); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .seguro-card p { color: #555; font-size: 0.9rem; }
+
         /* CÓMO FUNCIONA */
         .how-it-works { background: var(--gris-claro); }
         .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 2rem; }
@@ -304,6 +344,12 @@
             max-height: 380px;
         }
         .video-container video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .video-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .video-container.horizontal { aspect-ratio: 16/9; max-height: none; }
+        .video-container.horizontal video { object-fit: contain; }
+        .video-card.wide { max-width: 720px; grid-column: 1 / -1; }
+        .videos-grid.centered { grid-template-columns: repeat(auto-fit, minmax(240px, 280px)); justify-content: center; }
+        .yt-title { text-align: center; color: var(--azul-marino); font-size: 1.5rem; margin: 3.5rem 0 1.2rem; }
         .video-info { padding: 1.2rem; }
         .video-tag {
             display: inline-block;
@@ -610,7 +656,44 @@
             font-size: 0.9rem;
             margin-bottom: 1.2rem;
         }
+        .btn-telegram-send {
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            background: #229ed9; color: white; text-decoration: none; padding: 0.9rem;
+            border-radius: 10px; font-weight: 700; font-size: 1rem; transition: all 0.3s;
+        }
+        .btn-telegram-send:hover { background: #1b8bc0; transform: translateY(-2px); }
+        .tg-hint { color: #888; font-size: 0.8rem; }
+        .qr-pago { background: var(--gris-claro); border-radius: 15px; padding: 1.2rem; margin-bottom: 1.2rem; }
+        .qr-pago img { width: 220px; max-width: 100%; height: auto; display: block; margin: 0.6rem auto; border-radius: 8px; background: white; image-rendering: pixelated; }
+        .qr-titulo { color: var(--azul-marino) !important; margin-bottom: 0 !important; font-size: 1rem; }
+        .qr-ayuda { font-size: 0.82rem; color: #666 !important; margin-bottom: 0.6rem !important; }
+        .qr-descargar { display: inline-block; background: var(--azul-marino); color: white; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.6rem; }
         .btn-close-modal { background: var(--azul-marino); color: white; border: none; padding: 0.8rem 2rem; border-radius: 10px; cursor: pointer; font-weight: 600; font-family: 'Poppins', sans-serif; }
+
+        /* BOTÓN FLOTANTE TELEGRAM (arriba del de WhatsApp) */
+        .telegram-float {
+            position: fixed;
+            bottom: 104px;
+            right: 30px;
+            height: 60px;
+            min-width: 60px;
+            background: #229ed9;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4);
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0 18px 0 16px;
+        }
+        .telegram-float:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(34, 158, 217, 0.6); }
+        .telegram-float svg { width: 28px; height: 28px; fill: white; flex-shrink: 0; }
 
         /* BOTÓN FLOTANTE WHATSAPP */
         .whatsapp-float {
@@ -639,6 +722,22 @@
             fill: white;
         }
 
+        /* Menú desplegable en pantallas medianas y celulares */
+        @media (max-width: 1150px) {
+            .menu-toggle { display: block; margin-left: auto; }
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0;
+                width: 100%;
+                background: var(--azul-marino);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+            }
+            nav ul.active { display: flex; }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             section, footer { scroll-margin-top: 70px; }
@@ -661,6 +760,7 @@
             
             .video-card { max-width: 100%; }
             .video-container { aspect-ratio: 9/14; max-height: 320px; }
+            .video-container.horizontal { aspect-ratio: 16/9; max-height: none; }
             
             .kits-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .kit-image { height: 220px; }
@@ -673,6 +773,15 @@
             .evidencia-image { height: 220px; }
             
             .step-content.active { grid-template-columns: 1fr; gap: 1.2rem; }
+            .rinde-flecha { transform: rotate(90deg); }
+            .rinde-destacado { flex-direction: column; }
+            .tabla-rinde thead { display: none; }
+            .tabla-rinde, .tabla-rinde tbody, .tabla-rinde tr, .tabla-rinde td { display: block; width: 100%; }
+            .tabla-rinde tr { border-bottom: 6px solid var(--gris-claro); }
+            .tabla-rinde td { display: flex; justify-content: space-between; text-align: right; border-top: 1px solid #f0f0f0; padding: 0.6rem 1rem; }
+            .tabla-rinde td::before { content: attr(data-label); font-weight: 600; color: var(--azul-marino); text-align: left; }
+            .tabla-rinde td:first-child { display: block; text-align: left; background: var(--gris-claro); }
+            .tabla-rinde td:first-child::before { content: none; }
             .step-video { max-height: 320px; margin: 0 auto; max-width: 280px; }
             .step-info h3 { font-size: 1.1rem; }
             .step-btn { width: 42px; height: 42px; font-size: 1rem; }
@@ -680,6 +789,8 @@
             .nav-btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
             
             .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+            .telegram-float { bottom: 87px; right: 20px; height: 55px; min-width: 55px; padding: 0; }
+            .telegram-float span { display: none; }
             .modal { padding: 1.8rem 1.3rem; }
             
             .logo img { height: 40px; }
@@ -701,6 +812,7 @@
                 <ul id="navMenu">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#kits">Kits</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
                     <li><a href="#como-funciona">Cómo Funciona</a></li>
                     <li><a href="#casos-reales">Casos Reales</a></li>
                     <li><a href="#evidencias">Evidencias</a></li>
@@ -718,7 +830,8 @@
         <p>Concentrado Mata QK: mezcla con agua, rocía y adiós plagas. Económico, práctico y efectivo. Entrega local directa a tu puerta.</p>
         <a href="#kits" class="btn-primary">Ver Kits Disponibles</a>
         <div class="hero-badges">
-            <span class="badge">🚚 Entrega Local Gratis</span>
+            <span class="badge">🚚 Envío Gratis en la Ciudad</span>
+            <span class="badge">⏱️ Entrega en máx. 1 día hábil</span>
             <span class="badge">💰 Ahorra hasta 24%</span>
             <span class="badge">⚡ Acción al Contacto</span>
             <span class="badge">✅ Casos Reales Comprobados</span>
@@ -744,11 +857,11 @@
                         <ul class="kit-includes">
                             <li>1 Atomizador 1L premium</li>
                             <li>5 Bolsas de concentrado Mata QK</li>
-                            <li>5 Litros de producto listo para usar</li>
+                            <li>Rinde 10 litros (½ bolsa por litro)</li>
                             <li>Guía de aplicación impresa</li>
                         </ul>
                         <div class="kit-price">$168 MXN</div>
-                        <div class="kit-per-liter">$33.60 por litro</div>
+                        <div class="kit-per-liter"><strong>$16.80</strong> por litro preparado<br>5,000 a 10,000 gatillazos · desde 2 centavos c/u</div>
                         <button class="btn-kit" onclick="selectKit('inicio')">Pedir este Kit</button>
                     </div>
                 </div>
@@ -764,7 +877,7 @@
                         <ul class="kit-includes">
                             <li>2 Atomizadores 1L premium</li>
                             <li>10 Bolsas de concentrado Mata QK</li>
-                            <li>10 Litros de producto listo para usar</li>
+                            <li>Rinde 20 litros (½ bolsa por litro)</li>
                             <li>Guía de aplicación impresa</li>
                             <li>Soporte por WhatsApp</li>
                         </ul>
@@ -773,7 +886,7 @@
                             <small>Por separado: <s>$336 MXN</s></small>
                             $310 MXN
                         </div>
-                        <div class="kit-per-liter">$31.00 por litro</div>
+                        <div class="kit-per-liter"><strong>$15.50</strong> por litro preparado<br>10,000 a 20,000 gatillazos · desde 1.6 centavos c/u</div>
                         <button class="btn-kit" onclick="selectKit('familiar')">Pedir este Kit</button>
                     </div>
                 </div>
@@ -789,7 +902,7 @@
                         <ul class="kit-includes">
                             <li>2 Atomizadores 1L premium</li>
                             <li>15 Bolsas de concentrado Mata QK</li>
-                            <li>15 Litros de producto listo para usar</li>
+                            <li>Rinde 30 litros (½ bolsa por litro)</li>
                             <li>Guía de aplicación impresa</li>
                             <li>Soporte prioritario por WhatsApp</li>
                             <li>Mejor precio por litro</li>
@@ -799,7 +912,7 @@
                             <small>Por separado: <s>$456 MXN</s></small>
                             $345 MXN
                         </div>
-                        <div class="kit-per-liter">$23.00 por litro</div>
+                        <div class="kit-per-liter"><strong>$11.50</strong> por litro preparado<br>15,000 a 30,000 gatillazos · desde 1.2 centavos c/u</div>
                         <button class="btn-kit" onclick="selectKit('negocio')">Pedir este Kit</button>
                     </div>
                 </div>
@@ -817,8 +930,157 @@
                     <div class="recarga-price">
                         $120 MXN <small>/ 5 + 2 bolsas</small>
                     </div>
+                    <p class="recarga-rinde">Rinde <strong>14 litros</strong> · 7,000 a 14,000 gatillazos · <strong>$8.57</strong> por litro</p>
                     <div class="envio-gratis">🚚 Envío gratis</div>
                     <button class="btn-kit" onclick="selectKit('recarga')">Pedir Recarga</button>
+                </div>
+            </div>
+
+            <!-- PAGO CON QR CODI -->
+            <div class="qr-seccion" id="pagar-qr">
+                <h3 class="qr-seccion-titulo">📲 Paga tu Kit con CoDi</h3>
+                <p class="qr-seccion-sub">Escanea el código del producto que quieres. Cada código ya trae el monto exacto de <strong>1 pieza</strong>.</p>
+
+                <ol class="qr-pasos">
+                    <li><strong>Abre la app de tu banco</strong> y entra a <strong>CoDi</strong> o <strong>Pagar con QR</strong>.</li>
+                    <li><strong>Escanea el código</strong> del kit que quieres. Si estás viendo esta página en tu celular, toca <em>Descargar QR</em> y cárgalo desde tu galería en la app del banco.</li>
+                    <li><strong>Confirma el pago</strong> en tu app. Verás el monto y el concepto del kit.</li>
+                    <li><strong>Mándanos tu comprobante</strong> por WhatsApp o Telegram junto con tu <strong>nombre completo y domicilio</strong>. Entregamos en máximo 1 día hábil, con envío gratis dentro de la ciudad.</li>
+                </ol>
+
+                <div class="qr-grid">
+                <div class="qr-card">
+                    <h4>🏠 Kit Inicio</h4>
+                    <small>1 atomizador + 5 bolsas</small>
+                    <img src="images/qr-inicio.png" alt="Código QR CoDi para pagar Kit Inicio $168" loading="lazy">
+                    <div class="qr-card-precio">$168 MXN</div>
+                    <a href="images/qr-inicio.png" download="QR-MataQK-inicio.png" class="qr-descargar">⬇️ Descargar QR</a>
+                </div>
+                <div class="qr-card">
+                    <h4>👨‍👩‍👧 Kit Familiar</h4>
+                    <small>2 atomizadores + 10 bolsas</small>
+                    <img src="images/qr-familiar.png" alt="Código QR CoDi para pagar Kit Familiar $310" loading="lazy">
+                    <div class="qr-card-precio">$310 MXN</div>
+                    <a href="images/qr-familiar.png" download="QR-MataQK-familiar.png" class="qr-descargar">⬇️ Descargar QR</a>
+                </div>
+                <div class="qr-card">
+                    <h4>🏪 Kit Negocio</h4>
+                    <small>2 atomizadores + 15 bolsas</small>
+                    <img src="images/qr-negocio.png" alt="Código QR CoDi para pagar Kit Negocio $345" loading="lazy">
+                    <div class="qr-card-precio">$345 MXN</div>
+                    <a href="images/qr-negocio.png" download="QR-MataQK-negocio.png" class="qr-descargar">⬇️ Descargar QR</a>
+                </div>
+                <div class="qr-card">
+                    <h4>🔄 Recarga</h4>
+                    <small>5 bolsas + 2 GRATIS</small>
+                    <img src="images/qr-recarga.png" alt="Código QR CoDi para pagar Recarga $120" loading="lazy">
+                    <div class="qr-card-precio">$120 MXN</div>
+                    <a href="images/qr-recarga.png" download="QR-MataQK-recarga.png" class="qr-descargar">⬇️ Descargar QR</a>
+                </div>
+                </div>
+
+                <div class="qr-comprobante">
+                    <a href="https://wa.me/5219519231764?text=Hola!%20Ya%20pagu%C3%A9%20con%20CoDi.%20Te%20env%C3%ADo%20mi%20comprobante%2C%20nombre%20y%20domicilio." target="_blank" rel="noopener" class="btn-whatsapp-send">🧾 Enviar comprobante por WhatsApp</a>
+                    <a href="https://t.me/MataQKBot?start=pedido" target="_blank" rel="noopener" class="btn-telegram-send">✈️ Enviar comprobante por Telegram</a>
+                </div>
+                <p class="qr-seccion-nota">¿Quieres más de una pieza? Haz tu pedido en el formulario o por chat y te enviamos un QR por el total.</p>
+            </div>
+
+            <!-- Aviso de imágenes ilustrativas -->
+            <div class="aviso-diseno">
+                <span class="aviso-diseno-icon">ℹ️</span>
+                <p><strong>Imágenes ilustrativas.</strong> La forma y el diseño de los atomizadores y de los sobres pueden variar, ya que no manejamos un diseño fijo. Lo que sí se mantiene es el contenido de cada kit: la cantidad de atomizadores y de bolsas de concentrado que se indica.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS: RENDIMIENTO Y SEGURIDAD -->
+    <section id="beneficios" class="beneficios-section">
+        <div class="container">
+            <h2 class="section-title">💪 Rinde el Doble, Cuesta Menos</h2>
+            <p class="section-subtitle">Con <strong>medio sobre</strong> preparas <strong>1 litro</strong>, y cada litro rinde de <strong>500 a 1,000 gatillazos</strong>.</p>
+
+            <div class="rinde-destacado">
+                <div class="rinde-item"><span class="rinde-num">½</span><span class="rinde-txt">sobre por litro de agua</span></div>
+                <div class="rinde-flecha">→</div>
+                <div class="rinde-item"><span class="rinde-num">1 L</span><span class="rinde-txt">de producto listo para usar</span></div>
+                <div class="rinde-flecha">→</div>
+                <div class="rinde-item"><span class="rinde-num">500–1,000</span><span class="rinde-txt">gatillazos por litro</span></div>
+            </div>
+
+            <div class="tabla-wrap">
+                <table class="tabla-rinde">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Litros que rinde</th>
+                            <th>Gatillazos</th>
+                            <th>Costo por litro</th>
+                            <th>Te ahorras</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Producto"><strong>Kit Inicio</strong><small>1 atomizador + 5 bolsas</small></td>
+                            <td data-label="Precio">$168</td>
+                            <td data-label="Litros que rinde">10 L</td>
+                            <td data-label="Gatillazos">5,000 – 10,000</td>
+                            <td data-label="Costo por litro">$16.80</td>
+                            <td data-label="Te ahorras">—</td>
+                        </tr>
+                        <tr class="fila-popular">
+                            <td data-label="Producto"><strong>Kit Familiar</strong><small>2 atomizadores + 10 bolsas</small></td>
+                            <td data-label="Precio">$310</td>
+                            <td data-label="Litros que rinde">20 L</td>
+                            <td data-label="Gatillazos">10,000 – 20,000</td>
+                            <td data-label="Costo por litro">$15.50</td>
+                            <td data-label="Te ahorras" class="ahorro">$26</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Producto"><strong>Kit Negocio</strong><small>2 atomizadores + 15 bolsas</small></td>
+                            <td data-label="Precio">$345</td>
+                            <td data-label="Litros que rinde">30 L</td>
+                            <td data-label="Gatillazos">15,000 – 30,000</td>
+                            <td data-label="Costo por litro">$11.50</td>
+                            <td data-label="Te ahorras" class="ahorro">$111</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Producto"><strong>Recarga (promoción)</strong><small>5 bolsas + 2 gratis</small></td>
+                            <td data-label="Precio">$120</td>
+                            <td data-label="Litros que rinde">14 L</td>
+                            <td data-label="Gatillazos">7,000 – 14,000</td>
+                            <td data-label="Costo por litro">$8.57</td>
+                            <td data-label="Te ahorras" class="ahorro">$48</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="tabla-nota">"Te ahorras" compara con comprar lo mismo por separado: atomizador $48 y bolsa $24. En la recarga, el ahorro son las 2 bolsas de regalo. Cada gatillazo te cuesta entre 1 y 3 centavos.</p>
+
+            <h2 class="section-title" style="margin-top: 4rem;">🏡 Seguro para tu Hogar</h2>
+            <p class="section-subtitle">Elimina cucarachas sin complicarte la vida</p>
+
+            <div class="seguro-grid">
+                <div class="seguro-card">
+                    <div class="seguro-icon">✅</div>
+                    <h3>No es tóxico</h3>
+                    <p>Puedes usarlo con tranquilidad dentro de tu casa.</p>
+                </div>
+                <div class="seguro-card">
+                    <div class="seguro-icon">🐶</div>
+                    <h3>No daña a tus mascotas</h3>
+                    <p>Aplícalo en casa aunque tengas perros o gatos.</p>
+                </div>
+                <div class="seguro-card">
+                    <div class="seguro-icon">🧽</div>
+                    <h3>Limpieza fácil</h3>
+                    <p>Solo limpia el residuo con un trapo y listo.</p>
+                </div>
+                <div class="seguro-card">
+                    <div class="seguro-icon">🍽️</div>
+                    <h3>¿Cayó en los trastes?</h3>
+                    <p>Si cae en trastes o loza, solo lávalos con agua.</p>
                 </div>
             </div>
         </div>
@@ -839,17 +1101,17 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Haz tu Pedido</h3>
-                    <p>Llena el formulario y envíanos tu pedido por WhatsApp con un solo toque.</p>
+                    <p>Llena el formulario y envíanos tu pedido por WhatsApp o Telegram con un solo toque.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Recibe en Casa</h3>
-                    <p>Te lo entregamos personalmente en tu domicilio de forma segura.</p>
+                    <p>Te lo entregamos personalmente en tu domicilio en máximo 1 día hábil. Envío gratis dentro de la ciudad.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>Mezcla y Aplica</h3>
-                    <p>Vierte 1 bolsa en el atomizador, agrega agua, agita y rocía. ¡Listo!</p>
+                    <p>Vierte ½ bolsa en el atomizador, completa con agua hasta 1 litro, agita y rocía. ¡Listo!</p>
                 </div>
             </div>
         </div>
@@ -861,7 +1123,7 @@
             <h2 class="section-title">🎬 Casos Reales en Video</h2>
             <p class="section-subtitle">Resultados comprobados por nuestros clientes. Así funciona Mata QK en la vida real.</p>
             
-            <div class="videos-grid">
+            <div class="videos-grid centered">
                 <!-- Video 1 -->
                 <div class="video-card">
                     <div class="video-container">
@@ -878,45 +1140,88 @@
                     </div>
                 </div>
 
-                <!--
-                    VIDEOS 2 Y 3 OCULTOS HASTA QUE TENGAS EL MATERIAL REAL.
-                    Para activarlos: sube el video a la carpeta "videos/", escribe el título,
-                    la descripción y la frase real del cliente, y quita estas líneas de comentario.
-
+                <!-- Video 2 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video controls preload="metadata">
+                        <video controls preload="metadata" playsinline>
                             <source src="videos/caso-real-2.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento de video.
                         </video>
                     </div>
                     <div class="video-info">
-                        <span class="video-tag">🏪 Negocio</span>
-                        <h3>Título del caso</h3>
-                        <p>Descripción del caso.</p>
-                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>"Frase real del cliente"</span></div>
+                        <span class="video-tag">🍋 Cocina</span>
+                        <h3>Cucarachas en mesa y piso de cocina</h3>
+                        <p>Aplicación sobre la mesa de la cocina y el piso, donde se esconden entre la comida y las esquinas.</p>
                     </div>
                 </div>
 
+                <!-- Video 3 -->
                 <div class="video-card">
                     <div class="video-container">
-                        <video controls preload="metadata">
+                        <video controls preload="metadata" playsinline>
                             <source src="videos/caso-real-3.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento de video.
                         </video>
                     </div>
                     <div class="video-info">
-                        <span class="video-tag">👨‍👩‍👧 Casa</span>
-                        <h3>Título del caso</h3>
-                        <p>Descripción del caso.</p>
-                        <div class="video-rating">⭐⭐⭐⭐⭐ <span>"Frase real del cliente"</span></div>
+                        <span class="video-tag">🏠 Casa</span>
+                        <h3>Rociado sobre mesa de madera</h3>
+                        <p>Se rocía Mata QK sobre la superficie y se observa cómo actúa sobre la cucaracha al contacto.</p>
                     </div>
                 </div>
-                -->
+
+                <!-- Video 4 (sin audio) -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <video controls preload="metadata" playsinline muted>
+                            <source src="videos/mata_qk_sin_audio_1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag">🧱 Zoclos y rincones</span>
+                        <h3>Cucarachas junto a la pared</h3>
+                        <p>Aplicación en el rincón entre el piso y la pared, detrás de cables y aparatos, donde se ocultan las cucarachas.</p>
+                    </div>
+                </div>
+
+                <!-- Video 5 (sin audio, horizontal) -->
+                <div class="video-card wide">
+                    <div class="video-container horizontal">
+                        <video controls preload="metadata" playsinline muted>
+                            <source src="videos/mata_qk2_sin_audio.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag">💧 Contenedor</span>
+                        <h3>Cucarachas dentro de un contenedor</h3>
+                        <p>Cucarachas atrapadas en el fondo de un contenedor después de la aplicación de Mata QK.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEOS DE YOUTUBE -->
+            <h3 class="yt-title">▶️ Más videos en YouTube</h3>
+                <div class="video-card wide" style="margin-bottom: 1.5rem;">
+                    <div class="video-container horizontal">
+                        <iframe src="https://www.youtube-nocookie.com/embed/yl6o1bUVFBY" title="Mata QK en YouTube" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+                    </div>
+                </div>
+            <div class="videos-grid centered">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/ZrUzX0IYPes" title="Mata QK - Short 1" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/vgu1HmhPgxo" title="Mata QK - Short 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <p style="color: #666; margin-bottom: 1rem;">¿Ya usaste Mata QK? ¡Envíanos tu video y gana una recarga GRATIS!</p>
                 <a href="https://wa.me/5219519231764?text=Hola!%20Quiero%20enviar%20mi%20video%20de%20Mata%20QK" 
                    target="_blank" rel="noopener" class="btn-primary" style="background: var(--azul-marino);">
                     📱 Enviar mi Video por WhatsApp
@@ -956,18 +1261,6 @@
                     </div>
                 </div>
 
-                <!-- Espacio para la siguiente evidencia -->
-                <div class="evidencia-card">
-                    <div class="evidencia-placeholder">
-                        <div class="evidencia-placeholder-icon">📷</div>
-                        <p><strong>Próxima evidencia</strong></p>
-                        <p style="font-size: 0.85rem; margin-top: 0.5rem;">Envíanos tu foto y aparecerá aquí</p>
-                    </div>
-                    <div class="evidencia-info">
-                        <h3>¿Tienes una foto?</h3>
-                        <p>Comparte tu evidencia y gana una recarga gratis de Mata QK.</p>
-                    </div>
-                </div>
             </div>
 
             <div style="text-align: center; margin-top: 3rem;">
@@ -1030,7 +1323,7 @@
                         <div class="step-info">
                             <span class="step-number-badge">Paso 2</span>
                             <h3>Abre la bolsa de concentrado</h3>
-                            <p>Corta con cuidado una bolsita de concentrado Mata QK por la esquina superior. Vierte todo el contenido dentro del atomizador vacío.</p>
+                            <p>Corta con cuidado una bolsita de concentrado Mata QK por la esquina superior. Vierte <strong>la mitad del contenido</strong> dentro del atomizador vacío; con medio sobre preparas 1 litro. Guarda la otra mitad bien cerrada para tu siguiente preparación.</p>
                             <div class="step-tip">
                                 ⚠️ <strong>Precaución:</strong> Evita el contacto directo con la piel. Usa guantes si eres sensible.
                             </div>
@@ -1128,7 +1421,7 @@
     <section class="order-section" id="pedido">
         <div class="container">
             <h2 class="section-title">Realiza tu Pedido</h2>
-            <p class="section-subtitle">Completa tus datos y envíanos tu pedido por WhatsApp</p>
+            <p class="section-subtitle">Completa tus datos y envíanos tu pedido por WhatsApp o Telegram</p>
             
             <form class="order-form" id="orderForm" onsubmit="handleOrder(event)">
                 <div class="form-note">
@@ -1217,9 +1510,8 @@
                     <label for="paymentMethod">Método de Pago <span class="required">*</span></label>
                     <select id="paymentMethod" required>
                         <option value="">-- Selecciona método de pago --</option>
-                        <option value="Mercado Pago">💳 Mercado Pago</option>
-                        <option value="CoDi">📲 CoDi (Pago con celular)</option>
                         <option value="Efectivo contra entrega">💵 Efectivo contra entrega</option>
+                        <option value="Transferencia o depósito">🏦 Transferencia o depósito (te enviamos QR o link)</option>
                     </select>
                 </div>
 
@@ -1264,11 +1556,10 @@
                 <button type="submit" class="btn-submit">🛒 Continuar con mi Pedido</button>
 
                 <div class="payment-methods">
-                    <p>Formas de pago aceptadas:</p>
+                    <p>Pedidos únicamente por WhatsApp o Telegram · Formas de pago:</p>
                     <div class="payment-icons">
-                        <span class="payment-icon">💳 Mercado Pago</span>
-                        <img src="images/codi-logo.png" alt="CoDi" class="payment-icon-logo">
                         <span class="payment-icon">💵 Efectivo contra entrega</span>
+                        <span class="payment-icon">🏦 Transferencia o depósito</span>
                     </div>
                 </div>
             </form>
@@ -1285,7 +1576,7 @@
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <a href="https://wa.me/5219519231764" target="_blank" rel="noopener">📱 WhatsApp: 951 923 1764</a>
-                <a href="https://t.me/+529519231764" target="_blank" rel="noopener">✈️ Telegram: 951 923 1764</a>
+                <a href="https://t.me/MataQKBot?start=pedido" target="_blank" rel="noopener">✈️ Telegram: @MataQKBot</a>
                 <a href="mailto:ventas@mataqk.com">📧 ventas@mataqk.com</a>
                 <p>📍 Entrega local en Oaxaca de Juárez y zona conurbada</p>
             </div>
@@ -1309,6 +1600,12 @@
         </div>
     </footer>
 
+    <!-- BOTÓN FLOTANTE TELEGRAM -->
+    <a href="https://t.me/MataQKBot?start=pedido" id="telegramFloat" class="telegram-float" target="_blank" rel="noopener" title="Haz tu pedido por Telegram" aria-label="Haz tu pedido por Telegram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+        <span>Pedir por Telegram</span>
+    </a>
+
     <!-- BOTÓN FLOTANTE WHATSAPP -->
     <a href="https://wa.me/5219519231764?text=Hola!%20Me%20interesa%20Mata%20QK" class="whatsapp-float" target="_blank" rel="noopener" title="Chatea con nosotros" aria-label="Chatea con nosotros por WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1321,7 +1618,7 @@
         <div class="modal">
             <div class="modal-icon">📲</div>
             <h2 id="modalTitle">¡Último paso!</h2>
-            <p>Toca el botón verde para <strong>enviarnos tu pedido por WhatsApp</strong>. Tu pedido queda registrado cuando nos llega ese mensaje.</p>
+            <p>Envíanos tu pedido por <strong>WhatsApp</strong> o <strong>Telegram</strong>. Tu pedido queda registrado cuando nos llega tu mensaje.</p>
             <p><strong>Número de pedido:</strong> <span id="orderNumber"></span></p>
 
             <div class="modal-actions">
@@ -1329,12 +1626,22 @@
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0Z"/></svg>
                     Enviar pedido por WhatsApp
                 </a>
-                <a href="#" id="mpPayBtn" class="btn-mercadopago" target="_blank" rel="noopener" style="display: none;">💳 Pagar ahora con Mercado Pago</a>
+                <a href="#" id="tgSendBtn" class="btn-telegram-send" target="_blank" rel="noopener">✈️ Enviar pedido por Telegram</a>
+                <small id="tgHint" class="tg-hint">Al tocar Telegram copiamos tu pedido; solo pégalo en el chat y envíalo.</small>
             </div>
 
-            <div class="modal-sent" id="modalSent">✅ ¡Gracias! Si ya enviaste el mensaje, te responderemos para confirmar tu entrega.</div>
+            <div class="modal-sent" id="modalSent">✅ ¡Gracias! En cuanto recibamos tu mensaje te confirmamos y entregamos en máximo 1 día hábil.</div>
 
             <p id="modalMessage" style="font-size: 0.9rem;"></p>
+
+            <div class="qr-pago" id="qrBox" style="display: none;">
+                <p class="qr-titulo">📲 Paga con CoDi: <strong id="qrMonto"></strong></p>
+                <img id="qrImg" src="" alt="Código QR de pago CoDi">
+                <p class="qr-ayuda">Abre la app de tu banco → <strong>CoDi / Pagar con QR</strong> y escanéalo.
+                    Si estás en el mismo celular, descarga la imagen y cárgala desde tu galería.</p>
+                <a id="qrDescargar" href="#" download class="qr-descargar">⬇️ Descargar código QR</a>
+                <p class="qr-ayuda">Después de pagar, mándanos la foto de tu comprobante por WhatsApp o Telegram 🧾</p>
+            </div>
             <button class="btn-close-modal" onclick="closeModal()">Cerrar</button>
         </div>
     </div>
@@ -1344,17 +1651,26 @@
         // Número de WhatsApp que recibe los pedidos
         const WHATSAPP = '5219519231764';
 
+        // Telegram: cuando crees tu bot, pon aquí su usuario SIN @ (ej. 'MataQKBot').
+        // Mientras esté vacío, el botón de Telegram abre tu chat personal.
+        const TELEGRAM_BOT = 'MataQKBot';
+        const TELEGRAM_PERSONAL = 'https://t.me/+529519231764';
+
         // Productos y precios. Para cambiar un precio, cámbialo aquí
         // y también en el texto de la tarjeta y del <select>.
-        // mpLink: pega aquí la liga de cobro de Mercado Pago con el precio NUEVO.
-        // Si se deja vacío, al cliente se le dice que le enviarán la liga por WhatsApp.
+        // qr: código CoDi de cobro por el precio de 1 pieza (si cambias el precio, genera un QR nuevo).
         const PRODUCTOS = {
-            inicio:   { nombre: 'Kit Inicio - 1 Atomizador + 5 Bolsas',      precio: 168, mpLink: '' },
-            familiar: { nombre: 'Kit Familiar - 2 Atomizadores + 10 Bolsas', precio: 310, mpLink: '' },
-            negocio:  { nombre: 'Kit Negocio - 2 Atomizadores + 15 Bolsas',  precio: 345, mpLink: '' },
-            recarga:  { nombre: 'Recarga - 5 Bolsas + 2 GRATIS (promoción)',  precio: 120, mpLink: '' }
+            inicio:   { nombre: 'Kit Inicio - 1 Atomizador + 5 Bolsas',      precio: 168, qr: 'images/qr-inicio.png' },
+            familiar: { nombre: 'Kit Familiar - 2 Atomizadores + 10 Bolsas', precio: 310, qr: 'images/qr-familiar.png' },
+            negocio:  { nombre: 'Kit Negocio - 2 Atomizadores + 15 Bolsas',  precio: 345, qr: 'images/qr-negocio.png' },
+            recarga:  { nombre: 'Recarga - 5 Bolsas + 2 GRATIS (promoción)',  precio: 120, qr: 'images/qr-recarga.png' }
         };
         // =========================================================
+
+        // Botón flotante de Telegram: abre el bot si ya está configurado
+        if (TELEGRAM_BOT) {
+            document.getElementById('telegramFloat').href = `https://t.me/${TELEGRAM_BOT}?start=pedido`;
+        }
 
         // MENÚ MÓVIL
         function toggleMenu() {
@@ -1428,34 +1744,53 @@
             const waBtn = document.getElementById('waSendBtn');
             waBtn.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(buildMessage(data, orderNumber))}`;
 
-            // Mensaje según el método de pago
-            const mpBtn = document.getElementById('mpPayBtn');
-            mpBtn.style.display = 'none';
-            const msg = document.getElementById('modalMessage');
+            // Telegram: se copia el pedido y se abre el chat
+            lastOrderText = buildMessage(data, orderNumber);
+            document.getElementById('tgSendBtn').href = TELEGRAM_BOT
+                ? `https://t.me/${TELEGRAM_BOT}?start=web`
+                : TELEGRAM_PERSONAL;
 
-            if (data.metodoPago === 'CoDi') {
-                msg.textContent = `Después de recibir tu mensaje te enviaremos el código CoDi por $${data.total} MXN. Una vez confirmado el pago, coordinamos la entrega.`;
-            } else if (data.metodoPago === 'Mercado Pago') {
-                if (producto.mpLink && cantidad === 1) {
-                    mpBtn.href = producto.mpLink;
-                    mpBtn.style.display = 'block';
-                    msg.textContent = 'Primero envía tu pedido por WhatsApp y después puedes pagar con el botón azul.';
-                } else {
-                    msg.textContent = `Después de recibir tu mensaje te enviaremos la liga de Mercado Pago por $${data.total} MXN.`;
-                }
+            // Mensaje según el método de pago
+            const msg = document.getElementById('modalMessage');
+            const qrBox = document.getElementById('qrBox');
+            qrBox.style.display = 'none';
+            if (data.metodoPago === 'Transferencia o depósito' && producto.qr && cantidad === 1) {
+                // 1 pieza: el QR ya trae el monto exacto
+                document.getElementById('qrImg').src = producto.qr;
+                document.getElementById('qrDescargar').href = producto.qr;
+                document.getElementById('qrDescargar').setAttribute('download', `QR-MataQK-${key}.png`);
+                document.getElementById('qrMonto').textContent = `$${data.total} MXN`;
+                qrBox.style.display = 'block';
+                msg.textContent = 'Primero envíanos tu pedido y luego paga con este código. Envío gratis dentro de la ciudad y entrega en máximo 1 día hábil.';
+            } else if (data.metodoPago === 'Transferencia o depósito') {
+                msg.textContent = `En breve te enviaremos un código QR o link para que realices tu pago de $${data.total} MXN. Envío gratis dentro de la ciudad y entrega en máximo 1 día hábil.`;
             } else {
-                msg.textContent = `Pagas $${data.total} MXN en efectivo al recibir tu pedido. Te confirmaremos la entrega por WhatsApp.`;
+                msg.textContent = `Pagas $${data.total} MXN en efectivo al recibir tu pedido. Envío gratis dentro de la ciudad y entrega en máximo 1 día hábil.`;
             }
 
             document.getElementById('modalSent').style.display = 'none';
             document.getElementById('confirmationModal').classList.add('active');
         }
 
-        // Al tocar "Enviar pedido por WhatsApp" ya se puede limpiar el formulario
-        document.getElementById('waSendBtn').addEventListener('click', function () {
+        let lastOrderText = '';
+
+        function pedidoEnviado() {
             document.getElementById('orderForm').reset();
             updateSummary();
             document.getElementById('modalSent').style.display = 'block';
+        }
+
+        // Al tocar "Enviar pedido por WhatsApp" ya se puede limpiar el formulario
+        document.getElementById('waSendBtn').addEventListener('click', pedidoEnviado);
+
+        // Telegram no permite mensajes prellenados: copiamos el pedido al portapapeles
+        document.getElementById('tgSendBtn').addEventListener('click', function () {
+            const texto = lastOrderText.replace(/\*/g, '');
+            try {
+                if (navigator.clipboard) navigator.clipboard.writeText(texto).catch(() => {});
+            } catch (e) {}
+            document.getElementById('tgHint').textContent = '📋 Pedido copiado. Pégalo en el chat de Telegram y envíalo.';
+            pedidoEnviado();
         });
 
         // ARMAR MENSAJE DE WHATSAPP (texto normal; se codifica con encodeURIComponent)
@@ -1465,7 +1800,7 @@
                 : 'N/A';
 
             const lineas = [
-                d.metodoPago === 'CoDi' ? '📲 *SOLICITUD DE PAGO CoDi - MATA QK*' : '🛒 *NUEVO PEDIDO MATA QK*',
+                '🛒 *NUEVO PEDIDO MATA QK*',
                 '',
                 `📋 *Pedido:* ${orderNumber}`,
                 `📦 *Producto:* ${d.producto}`,
@@ -1480,15 +1815,14 @@
                 `📝 *Referencias:* ${d.referencias || 'Ninguna'}`,
                 `👥 *Contacto alterno:* ${contactoAlterno}`,
                 '',
-                `💳 *Pago:* ${d.metodoPago === 'CoDi' ? 'CoDi (Código QR)' : d.metodoPago}`,
+                `💳 *Pago:* ${d.metodoPago}`,
                 `⏰ *Horario:* ${d.horarioEntrega}`,
                 '',
                 `💬 *Comentarios:* ${d.comentarios || 'Ninguno'}`
             ];
 
-            if (d.metodoPago === 'CoDi') {
-                lineas.push('', '───────────────────',
-                    `*Por favor, generar código CoDi por $${d.total} MXN y enviar al cliente para completar el pago.*`);
+            if (d.metodoPago === 'Transferencia o depósito') {
+                lineas.push('', `*Enviar QR o link de pago por $${d.total} MXN.*`);
             }
 
             return lineas.join('\n');
